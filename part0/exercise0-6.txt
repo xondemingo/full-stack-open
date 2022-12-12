@@ -3,5 +3,6 @@ title Exercise 0.6
 note over browser:
 browser renders the new note 
 end note
+
 browser->server: HTTP POST exampleapp/new_note_spa with { content: "blabla", date: "blabla" }
 server-->browser: HTTP 201 { message: "note created" }
