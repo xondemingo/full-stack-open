@@ -1,4 +1,6 @@
-const Total = ({ part1, part2, part3 }) => 
-    <p>Total number of exercises: {part1.exercises + part2.exercises + part3.exercises}</p>
+const Total = ({ parts }) => {
+    const total = parts.reduce((acum, part) => acum + part.exercises, 0)
+    return <p>Total number of exercises: {total}.</p>
+}
 
 export default Total

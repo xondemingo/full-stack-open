@@ -8,15 +8,17 @@ const createPart = (name, exercises) => {
 
 const App = () => {
   const course = "Half stack application development"
-  const part1 = createPart("Fundamentals of React", 10)
-  const part2 = createPart("Using props to pass data", 7)
-  const part3 = createPart("State of a component", 14)
-  
+  const parts = [
+    createPart("Fundamentals of React", 10),
+    createPart("Using props to pass data", 7),
+    createPart("State of a component", 140)
+  ]
+
   return (
     <div>
       <Header title={course} />
-      <Content part1={part1} part2={part2} part3={part3} />
-      <Total part1={part1} part2={part2} part3={part3} />
+      <Content parts={parts} />
+      <Total parts={parts} />
     </div>
   )
 }
