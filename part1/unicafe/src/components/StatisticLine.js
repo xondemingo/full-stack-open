@@ -1,6 +1,10 @@
 const StatisticLine = ({ text, score }) => {
-    const style = { marginTop: 1, marginBottom: 1 }
-    return <p style={style}>{text} {score}</p>
+    return (
+        <tr>
+            <td>{text}</td>
+            <td>{score}</td>
+        </tr>
+    )
 }
 
 export default StatisticLine
