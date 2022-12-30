@@ -1,4 +1,5 @@
 import { useState } from "react"
+import Button from "./components/Button"
 
 const App = () => {
   const anecdotes = [
@@ -14,6 +15,7 @@ const App = () => {
   const getRandomIntUpTo = (limit) => Math.floor(Math.random() * limit)
 
   const [selected, setSelected] = useState(getRandomIntUpTo(anecdotes.length))
+  const [votes, setVotes] = useState(new Array(anecdotes.length).fill(0))
 
   const handleNextAnecdote = () => {
     let i = selected
@@ -23,10 +25,22 @@ const App = () => {
     setSelected(i)
   }
 
+  const handleVoteForCurrentAnecdote = () => {
+    const newVotes = [...votes]
+    newVotes[selected] += 1
+    setVotes(newVotes)
+  }
+
   return (
     <div>
-      <p>{anecdotes[selected]}</p>
-      <button onClick={handleNextAnecdote}>next anecdote</button>
+      <div>
+        <p>{anecdotes[selected]}</p>
+        <p>This anecdote has {votes[selected]} votes.</p>
+      </div>
+      <div>
+        <Button text="vote" handleClick={handleVoteForCurrentAnecdote} />
+        <Button text="next anecdote" handleClick={handleNextAnecdote} />
+      </div>
     </div>
   )
 }
