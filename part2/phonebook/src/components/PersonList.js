@@ -1,9 +1,9 @@
 import PersonLine from "./PersonLine"
 
-const PersonList = ({ persons }) => {
+const PersonList = ({ persons, currentFilter }) => {
     return (
         <div>
-            {persons.map(person => <PersonLine key={person.id} person={person} />)}
+            {persons.map(person => <PersonLine key={person.id} person={person} currentFilter={currentFilter} />)}
         </div>
     )
 }

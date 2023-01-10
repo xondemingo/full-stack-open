@@ -45,7 +45,7 @@ const App = () => {
       <NewPersonForm handleAddNewPerson={handleAddNewPerson} newName={newName} handleTypeNewName={handleTypeNewName} 
         newNumber={newNumber} handleTypeNewNumber={handleTypeNewNumber} />
       <h2>Numbers</h2>
-      <PersonList persons={personsToShow} />
+      <PersonList persons={personsToShow} currentFilter={currentFilter} />
     </div>
   )
 }
